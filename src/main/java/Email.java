@@ -1,11 +1,33 @@
-public class Email{
+import java.io.Serializable;
+
+public class Email implements Serializable {
 
     private String password;
     private String email;
+    private int boxCapacity;
+    private String altEmail;
 
     public Email(String password, String email) {
+        altEmail = "";
+        boxCapacity = 100;
         this.password = password;
         this.email = email;
+    }
+
+    public int getBoxCapacity() {
+        return boxCapacity;
+    }
+
+    public void setBoxCapacity(int boxCapacity) {
+        this.boxCapacity = boxCapacity;
+    }
+
+    public String getAltEmail() {
+        return altEmail;
+    }
+
+    public void setAltEmail(String altEmail) {
+        this.altEmail = altEmail;
     }
 
     public String getPassword() {
@@ -26,9 +48,7 @@ public class Email{
 
     @Override
     public String toString() {
-        return "Email{" +
-                "password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return "password='" + password + '\'' +
+                ", email='" + email + '\'';
     }
 }
