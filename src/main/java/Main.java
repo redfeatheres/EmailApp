@@ -23,7 +23,9 @@ public class Main {
         int selectDep = scanner.nextInt();
         String department = String.valueOf(Departments.values()[selectDep - 1]);
 
+        boolean isSuccess = createNewEmail(new User(name, lastName, department));
 
+        listOfEmails();
     }
 
     public static boolean createNewEmail(User user) {
@@ -35,7 +37,7 @@ public class Main {
                 "%s.%s@%s.company.com",
                 user.getName(),
                 user.getLastName(),
-                user.getDepartment());
+                user.getDepartment()).toLowerCase();
     }
 
     public static String passwordGenerator(int length) {
@@ -46,5 +48,9 @@ public class Main {
             stringBuilder.append(CHARACTERS.charAt(index));
         }
         return stringBuilder.toString();
+    }
+
+    public static void listOfEmails () {
+        emails.values().forEach(System.out::println);
     }
 }

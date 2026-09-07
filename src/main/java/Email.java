@@ -23,4 +23,12 @@ public class Email{
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public String toString() {
+        return "Email{" +
+                "password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }

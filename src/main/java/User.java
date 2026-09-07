@@ -2,13 +2,11 @@ public class User {
     private final String name;
     private final String lastName;
     private final String department;
-    private final Email email;
 
-    public User(String name, String lastName, String department, Email email) {
+    public User(String name, String lastName, String department) {
         this.name = name;
         this.lastName = lastName;
         this.department = department;
-        this.email = email;
     }
 
     public String getName() {
@@ -23,7 +21,14 @@ public class User {
         return department;
     }
 
-    public Email getEmail() {
-        return email;
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", department='" + department + '\'' +
+                '}';
     }
 }
